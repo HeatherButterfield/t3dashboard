@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <div class="d-flex justify-center margin-bottom">
-      <h1>{{title}}</h1>
+      <h1 class="margin-top">{{title}}</h1>
     </div>
     <v-row class="d-flex align-center">
       <v-col cols="6">
@@ -53,6 +53,9 @@
   }
   .margin-bottom {
     margin-bottom: 20px;
+  }
+  .margin-top {
+    margin-top: 40px;
   }
   .padding-left {
     padding-left: 10%;
