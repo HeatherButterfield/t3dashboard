@@ -1,8 +1,16 @@
 <template>
   <v-container>
-    <div class="d-flex justify-center margin-bottom">
-      <h1 class="margin-top">{{title}}</h1>
-    </div>
+    <v-row class="margin-top">
+      <v-col cols="11">
+        <h2>{{title}}</h2>
+      </v-col>
+      <v-col cols="1">
+        <span style="font-size: 2em; color: gray;"><i class="fas fa-caret-down d-flex" @click="open = !open"></i></span>
+      </v-col>
+    </v-row>
+    <v-row class="margin-lr">
+      <p>{{about}}</p>
+    </v-row>
     <v-row class="d-flex align-center">
       <v-col cols="6">
         <v-slider
@@ -17,7 +25,7 @@
         </v-slider>
       </v-col>
       <v-col cols="2">
-        <v-btn color="cyan" dark v-if="hasSlider">Change Max</v-btn>
+        <v-btn color="cyan" dark v-if="hasSlider">Update</v-btn>
       </v-col>
       <v-col cols="2">
       </v-col>
@@ -25,7 +33,7 @@
         <v-switch v-model="auto" :label="`Automatic Notifications`"></v-switch>
       </v-col>
     </v-row>
-    <v-row class="padding-left margin-lr colored" v-if="!auto">
+    <v-row class="padding-left margin-lr colored" v-if="!auto && open">
       <v-col class="d-flex align-center">
         <h2>Name</h2>
       </v-col>
@@ -38,7 +46,7 @@
       <v-col class="d-flex align-center">
       </v-col>
     </v-row>
-    <div v-if="!auto">
+    <div v-if="!auto && open">
       <div v-for="item in items" v-bind:key="item.name">
         <Item :name="item.name" :trigger="item.trigger" :options="item.options"/>
       </div>
@@ -75,8 +83,9 @@ export default {
   components: {
     Item,
   },
-  props: ["title", "items", "hasSlider", "min", "max", "start", "step", "labels"],
+  props: ["title", "about", "items", "hasSlider", "min", "max", "start", "step", "labels"],
   data: () => ({
+    open: false,
     auto: false
   }),
 };
