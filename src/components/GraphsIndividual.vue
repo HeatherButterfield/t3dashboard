@@ -1,6 +1,17 @@
 <template>
   <v-container>
     <h1 class="text-center margin-top margin-bottom">Individual Data</h1>
+    <v-row>
+      <v-col cols="4"></v-col>
+      <v-col cols="4">
+        <v-select
+          v-model="select"
+          :items="names"
+          label="Client"
+        ></v-select>
+      </v-col>
+      <v-col cols="4"></v-col>
+    </v-row>
     <div class="d-flex justify-space-around">
       <v-card class="graph" width="400px">
         <PieGraph :data="g1.data" :options="g1.options"/>
@@ -17,6 +28,9 @@
   .margin-bottom {
     margin-bottom: 40px;
   }
+  .select {
+    width: 300px;
+  }
 </style>
 
 <script>
@@ -29,6 +43,7 @@ export default {
   },
   props: ["people", "events"],
   data: () => ({
+    names: ["Heather", "Jameson", "Dominic", "Jaxon"],
     g1: {
       data: {
         datasets: [{
