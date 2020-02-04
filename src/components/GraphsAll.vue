@@ -34,14 +34,13 @@ export default {
     ScatterGraph,
     LineGraph
   },
-  props: ["people", "events"],
+  props: ["people", "events", "colors"],
   data: () => ({
-    colors: ["rgb(255, 99, 132)","rgb(75, 192, 192)","rgb(255, 205, 86)","rgb(128,0,128)","rgb(54, 162, 235)"],
     g1: {
       data: {
           datasets: [{
               label: "All Clients",
-              backgroundColor: "rgb(75, 192, 192)",
+              backgroundColor: "#0094d5",
               data: [
                 {
                     x: Math.floor(Math.random() * 50),
@@ -93,7 +92,7 @@ export default {
             label: "All Clients",
             data: [65,59,80,81,56,55,40],
             fill: false,
-            borderColor: "rgb(75, 192, 192)",
+            borderColor: "#0094d5",
             lineTension: 0.1,
           }
         ]

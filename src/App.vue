@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="background">
-      <GraphsAll/>
+      <GraphsAll :colors="colors"/>
       <GraphsIndividual/>
       <div v-for="section in sections" v-bind:key="section.title">
         <Section :title="section.title" :about="section.about" :items="section.items" :hasSlider="section.hasSlider" :min="section.min" :max="section.max" :start="section.start" :step="section.step" :labels="section.labels"/>
@@ -13,6 +13,14 @@
 <style>
   .background {
     background-color: #f9f7f7;
+  }
+  * {
+    font-family: 'Lato', sans-serif;
+    font-weight: "400px";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: "900px";
   }
 </style>
 
@@ -29,6 +37,16 @@ export default {
     GraphsIndividual
   },
   data: () => ({
+    colors: {
+      blue: "#0094d5",
+      darkBlue: "#394e73",
+      lightBlue: "#5a79bc",
+      aqua: "#b1d3d5",
+      orange: "#ed6622",
+      yellow: "#efb423",
+      green: "#acd13a",
+      purple: "#67235f"
+    },
     sections: [
       {
         title: 'Cash Increase',

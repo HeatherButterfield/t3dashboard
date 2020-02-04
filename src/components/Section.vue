@@ -25,7 +25,7 @@
         </v-slider>
       </v-col>
       <v-col cols="2">
-        <v-btn color="cyan" dark v-if="hasSlider">Update</v-btn>
+        <v-btn rounded color="#0094d5" dark v-if="hasSlider">Update</v-btn>
       </v-col>
       <v-col cols="2">
       </v-col>
@@ -70,7 +70,7 @@
     padding-right: 10%;
   }
   .colored {
-    background-color: #3F51B5;
+    background-color: #394e73;
     color: white;
   }
 </style>

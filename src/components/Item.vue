@@ -9,11 +9,11 @@
       </v-col>
       <v-col>
         <div v-for="(option, index) in options" v-bind:key="option" :class="{ active: index === active}">
-          <v-btn class="margin index" @click="select(index)" :color="getColor(index)" dark>{{option}}</v-btn>
+          <v-btn rounded class="margin index" @click="select(index)" :color="getColor(index)" dark>{{option}}</v-btn>
         </div>
       </v-col>
       <v-col class="d-flex align-center">
-        <v-btn color="indigo" dark>Generate Email</v-btn>
+        <v-btn rounded color="#394e73" dark>Generate Email</v-btn>
       </v-col>
     </v-row>
   </v-card>
@@ -45,10 +45,10 @@ export default {
     },
     getColor(i) {
       if (this.active === i) {
-        return "cyan cyan darken-3";
+        return "#394e73";
       }
       else {
-        return "cyan";
+        return "#5a79bc";
       }
     }
   },
